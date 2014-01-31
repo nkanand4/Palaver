@@ -3,6 +3,7 @@
 
 import sys
 import os
+import re
 from send_speech import Stt
 
 currentDir = os.path.dirname(os.path.realpath(__file__))
@@ -17,7 +18,12 @@ while True:
         stt = Stt()
         text = stt.speech_to_text(content)
         if text:
-	        print 'Out:',text.encode('utf-8').strip()
+		command = text.encode('utf-8').strip()
+		m = re.search('james\sbond', command, re.IGNORECASE)
+	        print 'Out:',command
+		if m:
+			os.system("espeak 'Yes Nit esh?'")
+			break;
 	        os.system(currentDir + "/recognize \"" + text.encode('utf-8').strip() + "\"")
         else:
             print 'No text was returned'
