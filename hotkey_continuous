@@ -19,8 +19,12 @@ while True:
         text = stt.speech_to_text(content)
         if text:
 		command = text.encode('utf-8').strip()
+		bye = re.search('goodbye\smr\sbond', command, re.IGNORECASE)
 		m = re.search('mr\sbond', command, re.IGNORECASE)
 	        print 'Out:',command
+		if bye:
+			os.system("byebye")
+			break;
 		if m:
 			os.system("handlequestions")
 			break;
