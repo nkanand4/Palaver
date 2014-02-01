@@ -19,11 +19,10 @@ while True:
         text = stt.speech_to_text(content)
         if text:
 		command = text.encode('utf-8').strip()
-		m = re.search('james\sbond', command, re.IGNORECASE)
+		m = re.search('mr\sbond', command, re.IGNORECASE)
 	        print 'Out:',command
 		if m:
-			os.system("espeak 'Yes Nit esh?'")
+			os.system("handlequestions")
 			break;
-	        os.system(currentDir + "/recognize \"" + text.encode('utf-8').strip() + "\"")
         else:
             print 'No text was returned'
