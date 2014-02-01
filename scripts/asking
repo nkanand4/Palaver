@@ -1,0 +1,5 @@
+#!/bin/sh
+AI_DIR=/home/nitesh/Developer/workspace/ai-nodejs/
+cd $AI_DIR
+node analyzer.js $* | xargs speaktext
+hotkeyagain

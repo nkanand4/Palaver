@@ -1,0 +1,3 @@
+#!/bin/sh
+cd $VOICE_DIR
+./hotkey_continuous

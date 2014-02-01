@@ -20,10 +20,11 @@ while True:
         if text:
 		question = text.encode('utf-8').strip().lower()
 	        print 'Will pass the following to nodejs for analysis: ',question
+		command = 'asking ' + question
+		os.system(command)
 		break
         else:
 		if tries > 2:
 			break
             	tries = tries + 1
 		print 'No text was returned. Will try again.'
-os.system("hotkeyagain")

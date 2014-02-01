@@ -1,0 +1,4 @@
+#!/bin/sh
+speaktext 'yes nit esh?'
+cd $VOICE_DIR
+./listen_question
