@@ -1,4 +1,5 @@
 #!/bin/sh
-speaktext 'yes nit esh?'
+#speaktext 'yes nitesh?'
 cd $VOICE_DIR
+mpg123 audio/name.mp3
 ./listen_question

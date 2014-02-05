@@ -1,3 +1,8 @@
 #!/bin/sh
-echo $* > /tmp/tts
-festival --tts /tmp/tts
+FILE=/tmp/tts
+SPEECH=/tmp/tts.mp3
+echo $* > $FILE
+#festival --tts /tmp/tts
+#espeak -f $FILE
+GoogleTTS.py -f $FILE -o $SPEECH
+mpg123 $SPEECH
